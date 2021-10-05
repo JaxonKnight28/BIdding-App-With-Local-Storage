@@ -7,6 +7,8 @@ class Bid {
         this.user = user;
         this.amount = amount;
         this.id = Util.newGuid('bid');
+        this.date = new Date();
+        this.date = this.date.toLocaleString();
     }
 }
 
@@ -22,7 +24,13 @@ function addBid(user) {
 function render() {
     let bidsHtml = '<ul class="list-group">';
     for (let i = 0; i < bids.length; i++) {
-        bidsHtml += `<li class="list-group-item">${bids[i].user}: ${bids[i].amount}</li>`;
+        bidsHtml += `<li class="list-group-item">
+        <div class="row">
+        <div class="col-sm">${bids[i].user}: $${bids[i].amount}</div>
+        <div class="col-sm text-secondary"><small>${bids[i].id}</small></div>
+        <div class="col-sm">${bids[i].date}</div>
+        </div></li>`;
+        //${bids[i].user}: $${bids[i].amount}
     }
     bidsHtml += '</ul>';
     document.getElementById('mainContainer').innerHTML = bidsHtml;
