@@ -1,6 +1,7 @@
 //this.id = Util.newGuid('');
 
 let bids = [];
+let prevBid = 0
 
 class Bid {
     constructor(user, amount) {
@@ -15,9 +16,15 @@ class Bid {
 function addBid(user) {
     let bidAmount = document.getElementById(user).value;
     if (bidAmount) {
-        bids.push(new Bid(user, bidAmount));
-        document.getElementById(user).value = '';
-        render();
+        if (bidAmount > prevBid) {
+            bids.push(new Bid(user, bidAmount));
+            document.getElementById(user).value = '';
+            render();
+            prevBid = bidAmount
+        }
+        else {
+            showError("Error", 'Must bid higher than the previous bid');
+        }
     }
 }
 
