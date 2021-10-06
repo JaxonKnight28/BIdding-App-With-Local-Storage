@@ -47,9 +47,9 @@ function render() {
     for (let i = 0; i < bids.length; i++) {
         bidsHtml += `<li class="list-group-item">
         <div class="row">
-        <div class="col-sm">${bids[i].user}: $${bids[i].amount}</div>
+        <div class="col-sm">${bids[i].user}: <span class="text-success">$${bids[i].amount}</span></div>
         <div class="col-sm text-secondary"><small>${bids[i].id}</small></div>
-        <div class="col-sm">${bids[i].date}</div>
+        <div class="col-sm text-secondary">${bids[i].date}</div>
         </div></li>`;
     }
     bidsHtml += '</ul>';
