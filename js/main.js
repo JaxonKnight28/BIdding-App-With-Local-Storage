@@ -22,9 +22,6 @@ function addBid(user) {
             render();
             prevBid = bidAmount
         }
-        else {
-            showError("Error", 'Must bid higher than the previous bid');
-        }
     }
 }
 
@@ -45,10 +42,12 @@ function render() {
 
 function save() {
     localStorage.setItem('SAVED_BIDS', JSON.stringify(bids));
+    localStorage.setItem('MAX_BID', JSON.stringify(prevBid));
 }
 
 function getSave() {
     bids = JSON.parse(localStorage.getItem('SAVED_BIDS'));
+    prevBid = JSON.parse(localStorage.getItem('MAX_BID'));
     render();
 }
 function clearSave() {
