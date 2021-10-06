@@ -22,6 +22,9 @@ function addBid(user) {
             render();
             prevBid = parseInt(bidAmount)
         }
+        else {
+            alert("Error, please bid higher")
+        }
     }
 }
 
