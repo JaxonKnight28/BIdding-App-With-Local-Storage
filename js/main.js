@@ -20,7 +20,7 @@ function addBid(user) {
             bids.push(new Bid(user, bidAmount));
             document.getElementById(user).value = '';
             render();
-            prevBid = bidAmount
+            prevBid = parseInt(bidAmount)
         }
     }
 }
@@ -51,5 +51,6 @@ function getSave() {
     render();
 }
 function clearSave() {
-    localStorage.clear();
+    localStorage.removeItem('SAVED_BIDS');
+    localStorage.removeItem('MAX_BID');
 }
