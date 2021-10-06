@@ -26,6 +26,9 @@ function addBid(user) {
             alert("Error, please bid higher")
         }
     }
+    else {
+        alert("Error, please enter a number")
+    }
 }
 
 function render() {
