@@ -52,8 +52,8 @@ function save() {
 }
 
 function getSave() {
-    bids = JSON.parse(localStorage.getItem('SAVED_BIDS'));
-    prevBid = JSON.parse(localStorage.getItem('MAX_BID'));
+    bids = JSON.parse(localStorage.getItem('SAVED_BIDS')) || [];
+    prevBid = JSON.parse(localStorage.getItem('MAX_BID')) || 0;
     render();
 }
 function clearSave() {
