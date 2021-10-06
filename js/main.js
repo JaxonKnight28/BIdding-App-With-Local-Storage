@@ -1,5 +1,5 @@
 let bids = [];
-let prevBid = 0
+let prevBid = 0;
 
 //create the Bid class for every bid
 class Bid {
@@ -27,16 +27,16 @@ function addBid(user) {
             document.getElementById(user).value = '';
             //renders and changed the prevBid amount to the most recent bid
             render();
-            prevBid = parseInt(bidAmount)
+            prevBid = parseInt(bidAmount);
         }
         //if bid is to low this error is thrown
         else {
-            alert("Error, please bid higher")
+            alert("Error, please bid higher");
         }
     }
     //if nothing is entered this error is thrown
     else {
-        alert("Error, please enter a number")
+        alert("Error, please enter a number");
     }
 }
 
